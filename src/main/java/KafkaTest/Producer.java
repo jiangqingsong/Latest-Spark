@@ -21,6 +21,9 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
+/**
+ *  发送数据到kafka
+ */
 public class Producer extends Thread {
     private final KafkaProducer<String, String> producer;
     private final String topic;

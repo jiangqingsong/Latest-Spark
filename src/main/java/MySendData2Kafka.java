@@ -17,9 +17,10 @@ public class MySendData2Kafka {
             producer = new SendData2Kafka();
             int i=0;
             while(true){
-                producer.send("liuyu-test-topic2", ("this is a sample" + i));
+                producer.send("liuyu-test-topic3", ("this is a sample" + i));
                 i++;
-                Thread.sleep(2000);
+                Thread.sleep(100);
+
             }
         }catch(Exception e){
             e.printStackTrace();
