@@ -7,6 +7,7 @@ import org.apache.flume.api.RpcClientFactory;
 import org.apache.flume.event.EventBuilder;
 
 import java.nio.charset.Charset;
+import java.util.HashMap;
 
 public class SendData2Flume{
     private RpcClient client;
@@ -23,8 +24,12 @@ public class SendData2Flume{
     }
 
     public void sendDataToFlume(String data) {
+
         // Create a Flume Event object that encapsulates the sample data
         Event event = EventBuilder.withBody(data, Charset.forName("UTF-8"));
+        HashMap<String, String> headers = new HashMap<String, String>();
+        headers.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        event.setHeaders(headers);
 
         // Send the event
         try {

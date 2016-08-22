@@ -1,4 +1,8 @@
 import Services.SendData2Flume;
+import com.sdyc.ndmp.protobuf.util.AudienceIdUtils;
+import org.apache.commons.codec.digest.DigestUtils;
+
+import java.util.UUID;
 
 /**
  * <pre>
@@ -11,31 +15,47 @@ import Services.SendData2Flume;
  */
 
 public class MySendData2Flume {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SendData2Flume client1 = new SendData2Flume();
-        //SendData2Flume client2 = new SendData2Flume();
+        SendData2Flume client2 = new SendData2Flume();
 
         // Initialize client with the remote Flume agent's host and port
-        client1.init("192.168.1.236", 41414);
-        //client2.init("192.168.1.115", 41415);
+        //client1.init("192.168.1.236", 41414);
+        client2.init("192.168.1.236", 4141);
 
         // Send 10 events to the remote Flume agent. That agent should be
         // configured to listen with an AvroSource.
-        String Data1 = "Hello Flume 1!!!";
-        String Data2 = "Hello Flume 2!!!";
+        //String Data1 = "【41414】,Hello Flume,my to hdfs!";
+        String Data2 = "【41415】Hello Flume,my to kafka!";
+        long count=0;
 
-        for (int i = 0; i < 100; i++) {
-            client1.sendDataToFlume(Data1);
-           //client2.sendDataToFlume(Data2);
-            try{
-                Thread thread = Thread.currentThread();
-                thread.sleep(2000);    //暂停程序后继续执行
-            }catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+       while (true){
+
+           /*String uuid1 = UUIDGenerator.getUUID();
+           String uuid2 = UUIDGenerator.getUUID();
+
+
+           String dmpId = AudienceIdUtils.createDmpId(uuid1, 201);
+           String qiHuId = DigestUtils.md5Hex(uuid2);
+           long time = System.currentTimeMillis();
+
+           StringBuilder stringBuilder = new StringBuilder(dmpId);
+           stringBuilder.append("#").append("234").append("#").append(qiHuId).append("#").append(time);
+
+           client1.sendDataToFlume(stringBuilder.toString());*/
+
+           //client2.sendDataToFlume(Data1);
+           client2.sendDataToFlume(Data2);
+           //Thread.sleep(100L);
+           System.out.println(count++);
+
+          /* if (count == 200) {
+               break;
+           }*/
         }
 
-        client1.cleanUp();
+        //client1.cleanUp();
         //client2.cleanUp();
     }
 }
