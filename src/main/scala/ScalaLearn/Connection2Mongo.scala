@@ -1,5 +1,7 @@
+package ScalaLearn
+
 import com.mongodb.DBCollection
-import com.mongodb.casbah.{MongoDB, MongoClient}
+import com.mongodb.casbah.{MongoClient, MongoDB}
 
 /**
   *
