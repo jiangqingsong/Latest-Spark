@@ -1,8 +1,7 @@
-import com.mongodb.casbah.commons.{Imports, MongoDBObject}
-import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkContext, SparkConf}
+package ScalaLearn
 
-import scala.io.{BufferedSource, Source}
+import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   *
@@ -20,7 +19,7 @@ import scala.io.{BufferedSource, Source}
 
 object TestSpark2 {
 	def main(args: Array[String]) {
-		val conf = new SparkConf().setAppName("Spark2-test")
+		val conf = new SparkConf().setMaster("local").setAppName("Spark2-test")
 		val sc =new SparkContext(conf)
 
 		val file: RDD[String] = sc.textFile("F:/Work/Latest-Spark/src/main/resources/test.txt",2)
@@ -37,6 +36,7 @@ object TestSpark2 {
 			println(a)
 		}
 
+		println(key_value.toDebugString)
 
 		/*val source: BufferedSource = Source.fromFile("F:/Work/Latest-Spark/src/main/resources/test.txt","utf-8")
 		val lines: Iterator[String] = source.getLines()
