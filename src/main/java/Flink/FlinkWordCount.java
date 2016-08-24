@@ -69,7 +69,7 @@ public class FlinkWordCount {
 
         // set up the execution environment
         final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-
+        //批处理DataSet    流处理SataStream
         // get input data
         DataSet<String> text = env.readTextFile(input);
 

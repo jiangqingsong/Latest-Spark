@@ -17,7 +17,7 @@ import org.apache.flink.streaming.api.windowing.time.Time
 
 //case class WordWithCount(word: String, count: Long)
 
-object FlinkStreamTest extends  App{
+/*object FlinkStreamTest extends  App{
 
 	val host="192.168.1.107"
 	val port=9000
@@ -32,4 +32,4 @@ object FlinkStreamTest extends  App{
 			.sum("count")
 
 	windowCounts.print()
-}
+}*/
