@@ -62,12 +62,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
-            <version>2.4.6</version>
-            <scope>test</scope>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.10 -->
         <dependency>
@@ -156,11 +150,38 @@
             <version>1.1.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.github.etaty/rediscala_2.10 -->
+        <dependency>
+            <groupId>com.github.etaty</groupId>
+            <artifactId>rediscala_2.10</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.json4s/json4s-jackson_2.10 -->
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_2.10</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.alluxio</groupId>
             <artifactId>alluxio-core-client</artifactId>
             <version>1.2.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.10</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka_2.10</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>mysql</groupId>
