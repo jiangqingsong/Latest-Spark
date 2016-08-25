@@ -182,6 +182,13 @@
             <version>1.4.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>0.98.17-hadoop2</version>
+        </dependency>
+
 
         <dependency>
             <groupId>mysql</groupId>
