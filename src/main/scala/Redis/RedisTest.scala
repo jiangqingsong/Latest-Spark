@@ -18,7 +18,7 @@ import scala.concurrent.{Await, Future}
 /**
   * 使用开源的redisscala项目，写数据到redis
   */
-object RedisTest {
+/*object RedisTest {
 
 	private val redisServer: String = "192.168.1.115"
 	private val port: Int = 9999
@@ -39,5 +39,5 @@ object RedisTest {
 		system.stop(null)
 
 	}
-}
+}*/
 
