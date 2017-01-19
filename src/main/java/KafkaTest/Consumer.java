@@ -64,7 +64,7 @@ public class Consumer extends ShutdownableThread {
 
 
     public static void main(String[] args) {
-        Consumer consumer = new Consumer("liuyu-test-topic2");
+        Consumer consumer = new Consumer("yaxin-test");
         consumer.doWork();
     }
 }

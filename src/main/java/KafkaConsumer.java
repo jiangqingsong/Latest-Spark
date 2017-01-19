@@ -29,7 +29,7 @@ public class KafkaConsumer {
         props.put("zookeeper.connect", "192.168.1.101:2181");
 
         //group 代表一个消费组
-        props.put("group.id", "liuyu-group");
+        props.put("group.id", "yaxin-group");
 
         //zk连接超时
         props.put("zookeeper.session.timeout.ms", "4000");
@@ -46,7 +46,7 @@ public class KafkaConsumer {
 
     void consume() {
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
-        topicCountMap.put(KafkaProducer.TOPIC, new Integer(1));
+        topicCountMap.put("yaxin-test", 1);
 
         StringDecoder keyDecoder = new StringDecoder(new VerifiableProperties());
         StringDecoder valueDecoder = new StringDecoder(new VerifiableProperties());

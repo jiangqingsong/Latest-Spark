@@ -17,7 +17,7 @@ public class MySendData2Kafka {
             producer = new SendData2Kafka();
             int i=0;
             while(true){
-                producer.send("Flink-test", ("Hello Flink,my from kafka ..." + i));
+                producer.send("yaxin-test", ("Hello,my to kafka ..." + i));
 
                 System.out.println(i);
                 i++;

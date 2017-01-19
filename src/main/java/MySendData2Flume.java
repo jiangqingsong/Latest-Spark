@@ -21,12 +21,12 @@ public class MySendData2Flume {
 
         // Initialize client with the remote Flume agent's host and port
         //client1.init("192.168.1.236", 41414);
-        client2.init("192.168.1.236", 4141);
+        client2.init("192.168.1.107", 41414);
 
         // Send 10 events to the remote Flume agent. That agent should be
         // configured to listen with an AvroSource.
-        //String Data1 = "【41414】,Hello Flume,my to hdfs!";
-        String Data2 = "【41415】Hello Flume,my to kafka!";
+        //String Data1 = "Hello Flume,my to ...";
+        String Data2 = "【LY】Hello Flume,my come from 192.168.102.35 !!!";
         long count=0;
 
 
@@ -34,7 +34,6 @@ public class MySendData2Flume {
 
            /*String uuid1 = UUIDGenerator.getUUID();
            String uuid2 = UUIDGenerator.getUUID();
-
 
            String dmpId = AudienceIdUtils.createDmpId(uuid1, 201);
            String qiHuId = DigestUtils.md5Hex(uuid2);
@@ -46,11 +45,12 @@ public class MySendData2Flume {
            client1.sendDataToFlume(stringBuilder.toString());*/
 
            //client2.sendDataToFlume(Data1);
+
            client2.sendDataToFlume(Data2);
-           //Thread.sleep(100L);
+           Thread.sleep(300L);
            System.out.println(count++);
 
-          /* if (count == 200) {
+           /*if (count == 200) {
                break;
            }*/
         }

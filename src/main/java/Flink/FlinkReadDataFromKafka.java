@@ -32,10 +32,10 @@ import java.util.Map;
  */
 public class FlinkReadDataFromKafka {
     public static void main(String[] args) throws Exception {
-        final String topic = "Flink-test";  //主题
-        final String kafkaServers = "192.168.1.101:9092";   //kafka brokers
+        final String topic = "wifimac_tracker";  //主题
+        final String kafkaServers = "nowledgedata-n8:9092,nowledgedata-n9:9092";   //kafka brokers
         final String zookeeperServers = "192.168.1.101:2181";  //zk服务
-        final String groupId = "FlinkConsumerDroup";    //消费者所属组Id
+        final String groupId = "wifimac";    //消费者所属组Id
 
         Map<String, String> map = new HashMap<String, String>();
         map.put("topic",topic);

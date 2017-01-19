@@ -17,7 +17,7 @@ import kafka.producer.ProducerConfig;
 public class KafkaProducer
 {
     private final Producer<String, String> producer;
-    public final static String TOPIC = "liuyu-test-topic2";
+    public final static String TOPIC = "liuyu-test";
 
     private KafkaProducer(){
         Properties props = new Properties();
